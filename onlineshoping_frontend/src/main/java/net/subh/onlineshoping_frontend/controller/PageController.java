@@ -16,28 +16,24 @@ public class PageController {
 	public ModelAndView index() {
 		//all controllers in the Spring Web MVC framework return a ModelAndView instance.
 		ModelAndView mv = new ModelAndView("page");//"page" is the logical view name
-		mv.addObject("greeting","welcome to spring web mvc");
+		mv.addObject("title","Home");
+		mv.addObject("userClickHome",true);
 		return mv;
 	}
-	/*@RequestMapping(value ="/test")
-	public ModelAndView test(@RequestParam(value="greeting" ,required=false)String subhugreeting) {
-	*//**	RequestMapping : used to get the value from query string
-		"greeting" hs to be ther in query string or else 404 error.
-		But if u dont want even if greeting is not there it should show some thing then use required=false *//*
-		if(subhugreeting==null)
-			subhugreeting="hello subhu what's up";
+	@RequestMapping(value = "/about" )
+	public ModelAndView about() {
+		//all controllers in the Spring Web MVC framework return a ModelAndView instance.
 		ModelAndView mv = new ModelAndView("page");//"page" is the logical view name
-		mv.addObject("valueToBeshown",subhugreeting);
+		mv.addObject("title","About Us");
+		mv.addObject("userClickAbout",true);
 		return mv;
-	}*/
-	/*@RequestMapping(value ="/test/{greeting}")
-	public ModelAndView test(@PathVariable("greeting")String subhugreeting) {
-	*//**	PathVariable :in order to make url clean and make it more SEO friendly we need to access the value from
-	 * the path *//*
-		if(subhugreeting==null)
-			subhugreeting="hello subhu what's up";
+	}
+	@RequestMapping(value = "/contact" )
+	public ModelAndView contact() {
+		//all controllers in the Spring Web MVC framework return a ModelAndView instance.
 		ModelAndView mv = new ModelAndView("page");//"page" is the logical view name
-		mv.addObject("valueToBeshown",subhugreeting);
+		mv.addObject("title","Contact Us");
+		mv.addObject("userClickContact",true);
 		return mv;
-	}*/
+	}
 }
