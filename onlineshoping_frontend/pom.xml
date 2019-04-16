@@ -13,7 +13,12 @@
 		<spring.version>4.3.6.RELEASE</spring.version>
 	</properties>
 	<dependencies>
-
+		<!-- Link backend project  -->
+		<dependency>
+			<groupId>net.subh</groupId>
+			<artifactId>onlineshoping_backend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- JAVA EE API(APACHE,GLASSFISH etc.not specific to any one good practice) -->
 		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 		<dependency>
